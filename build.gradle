@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.141'
     id 'idea'
-    id 'me.modmuss50.mod-publish-plugin' version '1.0.0'
+    id 'me.modmuss50.mod-publish-plugin' version '2.1.1'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -114,8 +114,10 @@ publishMods {
         projectId = "982512"
         minecraftVersions.add(minecraft_version)
         displayName = file.map { it.asFile.name }
+        client = true
+        server = true
         requires("applied-energistics-2")
-//        optional("mekanism", "applied-mekanistics", "applied-flux")
+        optional(/*"mekanism", "applied-mekanistics",*/ "applied-flux", "applied-energistics-2-wireless-terminals")
     }
 
     modrinth {
