@@ -11,6 +11,8 @@ import com.ultramega.ae2importexportcard.util.UpgradeType;
 import appeng.api.upgrades.Upgrades;
 import appeng.client.InitScreens;
 import appeng.core.definitions.AEItems;
+import de.mari_023.ae2wtlib.AE2wtlibItems;
+import de.mari_023.ae2wtlib.api.AE2wtlibAPI;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
@@ -67,11 +69,10 @@ public final class AE2ImportExportCard {
         if (ModList.get().isLoaded("ae2wtlib")) {
             AE2WTLIB_INSTALLED = true;
 
-            // TODO: re-enable once AE2WTLIB has ported
-//            Upgrades.add(ModItems.IMPORT_CARD.get(), AE2wtlibAPI.getWUT(), 1);
-//            Upgrades.add(ModItems.EXPORT_CARD.get(), AE2wtlibAPI.getWUT(), 1);
-//            Upgrades.add(ModItems.IMPORT_CARD.get(), AE2wtlibItems.PATTERN_ENCODING_TERMINAL, 1);
-//            Upgrades.add(ModItems.EXPORT_CARD.get(), AE2wtlibItems.PATTERN_ENCODING_TERMINAL, 1);
+            Upgrades.add(ModItems.IMPORT_CARD.get(), AE2wtlibAPI.getWUT(), 1);
+            Upgrades.add(ModItems.EXPORT_CARD.get(), AE2wtlibAPI.getWUT(), 1);
+            Upgrades.add(ModItems.IMPORT_CARD.get(), AE2wtlibItems.PATTERN_ENCODING_TERMINAL, 1);
+            Upgrades.add(ModItems.EXPORT_CARD.get(), AE2wtlibItems.PATTERN_ENCODING_TERMINAL, 1);
         }
         APPFLUX_INSTALLED = ModList.get().isLoaded("appflux");
         MEKANISM_INSTALLED = ModList.get().isLoaded("mekanism");

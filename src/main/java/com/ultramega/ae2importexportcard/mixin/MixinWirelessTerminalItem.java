@@ -1,6 +1,7 @@
 package com.ultramega.ae2importexportcard.mixin;
 
 import com.ultramega.ae2importexportcard.AE2ImportExportCard;
+import com.ultramega.ae2importexportcard.compat.ae2wtlib.Ae2WtlibUtil;
 import com.ultramega.ae2importexportcard.compat.appflux.AppFluxBridge;
 import com.ultramega.ae2importexportcard.registry.ModDataComponents;
 import com.ultramega.ae2importexportcard.registry.ModItems;
@@ -103,8 +104,7 @@ public abstract class MixinWirelessTerminalItem extends Item {
         IGrid grid = null;
 
         if (AE2ImportExportCard.AE2WTLIB_INSTALLED) {
-            // TODO: re-enable once AE2WTLIB has ported
-//            grid = Ae2WtlibUtil.getGridFromStack(wirelessTerminalItem, player, terminalStack);
+            grid = Ae2WtlibUtil.getGridFromStack(wirelessTerminalItem, player, terminalStack);
         }
 
         if (grid == null) {

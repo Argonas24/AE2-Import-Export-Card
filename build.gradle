@@ -92,8 +92,8 @@ configurations {
 dependencies {
     implementation "org.appliedenergistics:appliedenergistics2:${ae2_version}"
 
-//    compileOnly "de.mari_023:ae2wtlib:${ae2wtlib_version}"
-//    runtimeOnly "de.mari_023:ae2wtlib:${ae2wtlib_version}"
+    compileOnly "de.mari_023:ae2wtlib:${ae2wtlib_version}"
+    runtimeOnly "de.mari_023:ae2wtlib:${ae2wtlib_version}"
 
 //    compileOnlyApi "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:api"
 //    runtimeOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:all"
